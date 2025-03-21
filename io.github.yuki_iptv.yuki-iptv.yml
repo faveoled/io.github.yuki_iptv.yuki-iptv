@@ -8,6 +8,13 @@ command: run.sh
 rename-appdata-file: yuki-iptv.appdata.xml
 rename-desktop-file: yuki-iptv.desktop
 rename-icon: yuki-iptv
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    version: '24.08'
+    directory: lib/ffmpeg
+    add-ld-path: .
+cleanup-commands:
+  - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
 finish-args:
   - --socket=x11
   - --share=network
