@@ -25,68 +25,36 @@ sources:
 modules:
   - shared-modules/luajit/luajit.json
 
-  # - name: libplacebo
-  #   buildsystem: meson
-  #   config-opts:
-  #     - -Dd3d11=disabled
-  #     - -Ddemos=False
-  #   sources:
-  #     - type: archive
-  #       url: https://code.videolan.org/videolan/libplacebo/-/archive/v7.349.0/libplacebo-v7.349.0.tar.gz
-  #       sha256: 79120e685a1836344b51b13b6a5661622486a84e4d4a35f6c8d01679a20fbc86
-  #       x-checker-data:
-  #         type: anitya
-  #         project-id: 20101
-  #         stable-only: true
-  #         url-template: https://code.videolan.org/videolan/libplacebo/-/archive/v$version/libplacebo-v$version.tar.gz
-  #     - type: archive
-  #       url: https://github.com/pallets/markupsafe/archive/refs/tags/2.1.3.tar.gz
-  #       sha256: b209e55e953eabf4bc31e0c9f3182af03b40e5bf5afed652f72b9b7ac02c0b30
-  #       dest: 3rdparty/markupsafe
-  #     - type: archive
-  #       url: https://github.com/pallets/jinja/archive/refs/tags/3.1.2.tar.gz
-  #       sha256: ecae76cd1a064d40eb46c5375f07953d747f4d65b68cd3fa5f02c91714b799fc
-  #       dest: 3rdparty/jinja
-  #     - type: archive
-  #       url: https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.4.tar.gz
-  #       sha256: 02629644c242dcc27c58222bd2c001d5e2f3765dbbcfd796542308bddebab401
-  #       dest: 3rdparty/glad
-  #   modules:
-  #     - name: glslang
-  #       buildsystem: cmake-ninja
-  #       config-opts:
-  #         - -DBUILD_SHARED_LIBS=ON
-  #       cleanup:
-  #         - /bin
-  #         - /include
-  #         - /lib/cmake
-  #       sources:
-  #         - type: archive
-  #           url: https://github.com/KhronosGroup/glslang/archive/15.1.0.tar.gz
-  #           sha256: 4bdcd8cdb330313f0d4deed7be527b0ac1c115ff272e492853a6e98add61b4bc
-  #           x-checker-data:
-  #             type: anitya
-  #             project-id: 205796
-  #             stable-only: true
-  #             url-template: https://github.com/KhronosGroup/glslang/archive/$version.tar.gz
-  #         - type: archive
-  #           url: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
-  #           sha256: 6b8577054c575573ead3ad71cb6a2c0b3397b64c746cc3c99e48cc5e324c1b55
-  #           dest: External/spirv-tools
-  #           x-checker-data:
-  #             type: anitya
-  #             stable-only: true
-  #             project-id: 334920
-  #             url-template: https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/vulkan-sdk-$version.tar.gz
-  #         - type: archive
-  #           url: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-1.4.309.0.tar.gz
-  #           sha256: a96f8b4f2dfb18f7432e5c523e220ab0075372a9509e0c25fbff21c76af0de7c
-  #           dest: External/spirv-tools/external/spirv-headers
-  #           x-checker-data:
-  #             type: anitya
-  #             stable-only: true
-  #             project-id: 334920
-  #             url-template: https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/vulkan-sdk-$version.tar.gz
+  - name: libplacebo
+    buildsystem: meson
+    config-opts:
+      - -Dd3d11=disabled
+      - -Ddemos=False
+    sources:
+      - type: archive
+        url: https://code.videolan.org/videolan/libplacebo/-/archive/v7.349.0/libplacebo-v7.349.0.tar.gz
+        sha256: 79120e685a1836344b51b13b6a5661622486a84e4d4a35f6c8d01679a20fbc86
+        x-checker-data:
+          type: anitya
+          project-id: 20101
+          stable-only: true
+          url-template: https://code.videolan.org/videolan/libplacebo/-/archive/v$version/libplacebo-v$version.tar.gz
+      - type: archive
+        url: https://github.com/pallets/jinja/archive/refs/tags/3.1.6.tar.gz
+        sha256: 2074b22a72caa65474902234b320d73463d6d4c223ee49f4b433495758356337
+        dest: 3rdparty/jinja
+        x-checker-data:
+          type: anitya
+          project-id: 3894
+          url-template: https://github.com/pallets/jinja/archive/refs/tags/$version.tar.gz
+      - type: archive
+        url: https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8.tar.gz
+        sha256: 44f06f9195427c7017f5028d0894f57eb216b0a8f7c4eda7ce883732aeb2d0fc
+        dest: 3rdparty/glad
+        x-checker-data:
+          type: anitya
+          project-id: 300234
+          url-template: https://github.com/Dav1dde/glad/archive/refs/tags/v$version.tar.gz
 
   # - name: libXpresent
   #   buildsystem: autotools
